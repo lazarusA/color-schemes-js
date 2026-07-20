@@ -1,0 +1,31 @@
+- title: Basics
+  path: /basics
+  description: Access, sample, and resample color schemes in ColorSchemes.js
+
+- title: Catalogue
+  path: /catalogue
+  description: Explore the complete library of 1,150+ color schemes across all categories
+
+- title: Finding Schemes
+  path: /finding
+  description: Search, filter, and discover color schemes programmatically
+
+- title: Good Practice
+  path: /goodpractice
+  description: Best practices for choosing perceptually uniform and colorblind-safe colormaps
+
+- title: Plotting & 3D
+  path: /plotting
+  description: Integrate color schemes with Three.js WebGL and HTML5 Canvas 2D
+
+- title: Image Processing
+  path: /images
+  description: Procedural fractal generation and false-color elevation maps
+
+- title: References
+  path: /references
+  description: Academic papers, palette citations, and perceptual color science literature
+
+- title: Function Index
+  path: /functionindex
+  description: Complete API reference for all exported functions, classes, and types

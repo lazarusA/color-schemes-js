@@ -1,0 +1,40 @@
+{
+  "name": "color-schemes-js",
+  "version": "0.1.0",
+  "description": "Pre-defined color schemes and color evaluation tools, inspired by Julia's ColorSchemes.jl, in TypeScript.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "colorscheme",
+    "colorschemes",
+    "color",
+    "palette",
+    "colormap",
+    "visualization",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  }
+}
