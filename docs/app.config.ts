@@ -18,7 +18,7 @@ export default defineAppConfig({
 
   // GitHub integration (shows GitHub icon in the header)
   github: {
-    url: 'https://github.com/lalonso/color-schemes-js',
+    url: 'https://github.com/lazarusA/color-schemes-js',
   },
 
   // Search
