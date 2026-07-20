@@ -148,8 +148,8 @@ function copyName(name) {
 <style scoped>
 .catalogue-search-card {
   margin: 2rem 0 3rem;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 1.25rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.15);
@@ -173,8 +173,8 @@ function copyName(name) {
 .search-badge {
   font-size: 0.825rem;
   font-weight: 800;
-  color: #818cf8;
-  background: rgba(99, 102, 241, 0.15);
+  color: var(--ui-primary);
+  background: rgba(99, 102, 241, 0.12);
   padding: 0.25rem 0.65rem;
   border-radius: 0.45rem;
   border: 1px solid rgba(99, 102, 241, 0.3);
@@ -182,7 +182,7 @@ function copyName(name) {
 
 .search-sub {
   font-size: 0.875rem;
-  color: var(--ui-text-muted, #94a3b8);
+  color: var(--ui-text-muted);
 }
 
 .search-input-wrapper {
@@ -196,35 +196,33 @@ function copyName(name) {
   left: 1.25rem;
   width: 1.25rem;
   height: 1.25rem;
-  color: #818cf8;
+  color: var(--ui-primary);
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
   padding: 1.05rem 3.25rem 1.05rem 3.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1.5px solid rgba(99, 102, 241, 0.35);
+  background: var(--ui-bg-code);
+  border: 1.5px solid var(--ui-border);
   border-radius: 0.85rem;
-  color: #ffffff;
+  color: var(--ui-text-highlighted);
   font-size: 0.95rem;
   outline: none;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
 }
 
 .search-input:focus {
-  border-color: #6366f1;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+  border-color: var(--ui-primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
 .clear-btn {
   position: absolute;
   right: 1.25rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--ui-bg-accented);
   border: none;
-  color: #94a3b8;
+  color: var(--ui-text-muted);
   font-size: 0.85rem;
   width: 1.5rem;
   height: 1.5rem;
@@ -236,8 +234,8 @@ function copyName(name) {
 }
 
 .clear-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
+  color: var(--ui-text-highlighted);
+  background: var(--ui-border);
 }
 
 .search-chips-row {
@@ -249,7 +247,7 @@ function copyName(name) {
 }
 
 .chips-label {
-  color: var(--ui-text-muted, #94a3b8);
+  color: var(--ui-text-muted);
   font-weight: 600;
   margin-right: 0.25rem;
 }
@@ -257,39 +255,39 @@ function copyName(name) {
 .chip-btn {
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--ui-text-highlighted, #f1f5f9);
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg-accented);
+  color: var(--ui-text-highlighted);
   font-size: 0.775rem;
-  font-family: ui-monospace, monospace;
+  font-family: 'JetBrains Mono', monospace;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .chip-btn:hover {
   background: rgba(99, 102, 241, 0.2);
-  border-color: #818cf8;
-  color: #818cf8;
+  border-color: var(--ui-primary);
+  color: var(--ui-primary);
 }
 
 .search-results-section {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  border-top: 1px solid var(--ui-border);
 }
 
 .results-header {
   font-size: 0.85rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-bottom: 1rem;
 }
 
 .results-header strong {
-  color: #818cf8;
+  color: var(--ui-primary);
 }
 
 .no-results {
-  color: #f87171;
+  color: var(--ui-error);
 }
 
 .results-grid {
@@ -312,8 +310,8 @@ function copyName(name) {
 
 .result-card {
   padding: 0.85rem 1rem;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
   cursor: pointer;
   display: flex;
@@ -326,7 +324,7 @@ function copyName(name) {
 
 .result-card:hover {
   transform: translateY(-2px);
-  border-color: #818cf8;
+  border-color: var(--ui-primary);
 }
 
 .card-top {

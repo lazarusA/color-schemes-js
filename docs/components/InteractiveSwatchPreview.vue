@@ -391,8 +391,8 @@ function copy(text) {
   max-width: 860px;
   margin: 2rem auto 4rem;
   padding: 2.25rem;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 1.25rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -406,13 +406,13 @@ function copy(text) {
 .title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--ui-text-highlighted, currentColor);
+  color: var(--ui-text-highlighted);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 0.95rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin: 0;
 }
 
@@ -427,9 +427,9 @@ function copy(text) {
 .tab-btn {
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.1));
-  background: var(--ui-bg, rgba(255, 255, 255, 0.03));
-  color: var(--ui-text-muted, currentColor);
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg-accented);
+  color: var(--ui-text-muted);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -437,13 +437,13 @@ function copy(text) {
 }
 
 .tab-btn:hover {
-  background: var(--ui-bg-accented, rgba(255, 255, 255, 0.08));
-  color: var(--ui-text-highlighted, currentColor);
+  background: var(--ui-border);
+  color: var(--ui-text-highlighted);
 }
 
 .tab-btn.active {
-  background: #6366f1;
-  border-color: #6366f1;
+  background: var(--ui-primary);
+  border-color: var(--ui-primary);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
@@ -459,24 +459,24 @@ function copy(text) {
 .scheme-pill {
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
-  background: rgba(0, 0, 0, 0.2);
-  color: var(--ui-text-muted, currentColor);
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg-accented);
+  color: var(--ui-text-muted);
   font-size: 0.8rem;
-  font-family: ui-monospace, monospace;
+  font-family: 'JetBrains Mono', monospace;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .scheme-pill:hover {
-  border-color: #818cf8;
-  color: var(--ui-text-highlighted, currentColor);
+  border-color: var(--ui-primary);
+  color: var(--ui-text-highlighted);
 }
 
 .scheme-pill.active {
-  background: rgba(129, 140, 248, 0.2);
-  border-color: #818cf8;
-  color: #818cf8;
+  background: var(--ui-primary);
+  border-color: var(--ui-primary);
+  color: #ffffff;
   font-weight: 700;
 }
 

@@ -185,8 +185,8 @@ function copyName(name) {
 
 .scheme-card {
   padding: 0.85rem 1rem;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.1));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
   backdrop-filter: blur(12px);
   cursor: pointer;
@@ -200,7 +200,7 @@ function copyName(name) {
 
 .scheme-card:hover {
   transform: translateY(-2px);
-  border-color: #818cf8;
+  border-color: var(--ui-primary);
   box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.2);
 }
 
@@ -211,7 +211,7 @@ function copyName(name) {
   gap: 0.5rem;
   font-size: 0.825rem;
   font-weight: 700;
-  color: var(--ui-text-highlighted, currentColor);
+  color: var(--ui-text-highlighted);
   min-width: 0;
 }
 
@@ -226,7 +226,7 @@ function copyName(name) {
 .copy-icon {
   width: 0.85rem;
   height: 0.85rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   opacity: 0.6;
   flex-shrink: 0;
   margin-top: 2px;
@@ -235,12 +235,12 @@ function copyName(name) {
 
 .scheme-card:hover .copy-icon {
   opacity: 1;
-  color: #818cf8;
+  color: var(--ui-primary);
 }
 
 .copied-toast {
   font-size: 0.75rem;
-  color: #34d399;
+  color: var(--ui-success);
   font-weight: 600;
   flex-shrink: 0;
   margin-top: 2px;
@@ -250,8 +250,8 @@ function copyName(name) {
   height: 1.25rem;
   border-radius: 0.375rem;
   padding: 1.5px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
 }
 
 .gradient-bar {
@@ -268,9 +268,9 @@ function copyName(name) {
 .show-more-btn {
   padding: 0.45rem 1.25rem;
   border-radius: 9999px;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.15));
-  background: rgba(99, 102, 241, 0.1);
-  color: #818cf8;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg-accented);
+  color: var(--ui-primary);
   font-size: 0.825rem;
   font-weight: 700;
   cursor: pointer;
@@ -278,8 +278,8 @@ function copyName(name) {
 }
 
 .show-more-btn:hover {
-  background: #6366f1;
+  background: var(--ui-primary);
   color: #ffffff;
-  border-color: #6366f1;
+  border-color: var(--ui-primary);
 }
 </style>

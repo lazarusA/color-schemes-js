@@ -272,8 +272,8 @@ function copyCode() {
   align-items: center;
   justify-content: space-between;
   padding: 0.85rem 1.25rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-accented);
+  border-bottom: 1px solid var(--ui-border);
 }
 
 .tab-buttons {
@@ -289,7 +289,7 @@ function copyCode() {
   border-radius: 0.5rem;
   border: 1px solid transparent;
   background: transparent;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -297,11 +297,11 @@ function copyCode() {
 }
 
 .tab-toggle-btn:hover {
-  color: var(--ui-text-highlighted, currentColor);
+  color: var(--ui-text-highlighted);
 }
 
 .tab-toggle-btn.active {
-  background: #6366f1;
+  background: var(--ui-primary);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
 }
@@ -314,8 +314,8 @@ function copyCode() {
 .demo-badge {
   font-size: 0.75rem;
   font-weight: 700;
-  font-family: ui-monospace, monospace;
-  color: var(--ui-color-primary-500, #38bdf8);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ui-color-primary-500);
 }
 
 .preview-container {
@@ -335,8 +335,8 @@ function copyCode() {
   display: inline-flex;
   gap: 0.3rem;
   padding: 0.25rem;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.1));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
   border-radius: 0.65rem;
 }
 
@@ -344,7 +344,7 @@ function copyCode() {
   padding: 0.35rem 0.75rem;
   border: none;
   background: transparent;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 0.45rem;
@@ -353,9 +353,8 @@ function copyCode() {
 }
 
 .pill-btn.active {
-  background: rgba(129, 140, 248, 0.2);
-  color: #818cf8;
-  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: var(--ui-primary);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -368,15 +367,15 @@ function copyCode() {
 .select-label {
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
 }
 
 .scheme-select {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.2));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 0.45rem;
-  color: var(--ui-text-highlighted, currentColor);
-  font-family: ui-monospace, monospace;
+  color: var(--ui-text-highlighted);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.825rem;
   padding: 0.3rem 0.6rem;
   outline: none;
@@ -386,9 +385,9 @@ function copyCode() {
 .canvas-viewport {
   width: 100%;
   border-radius: 1rem;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--ui-border);
   overflow: hidden;
-  background: #0f172a;
+  background: var(--ui-bg-code);
 }
 
 .demo-canvas {
@@ -406,14 +405,14 @@ function copyCode() {
   align-items: center;
   justify-content: space-between;
   font-size: 0.825rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-bottom: 0.75rem;
 }
 
 .copy-code-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
-  color: var(--ui-text-highlighted, currentColor);
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  color: var(--ui-text-highlighted);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
@@ -423,20 +422,20 @@ function copyCode() {
 }
 
 .copy-code-btn:hover {
-  border-color: #818cf8;
-  color: #818cf8;
+  border-color: var(--ui-primary);
+  color: var(--ui-primary);
 }
 
 .code-block {
   margin: 0;
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-code);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   line-height: 1.55;
-  color: #38bdf8;
+  color: var(--ui-text-code);
   overflow-x: auto;
 }
 </style>

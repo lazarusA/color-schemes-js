@@ -506,7 +506,7 @@ function copyCode() {
 }
 
 .tab-toggle-btn.active {
-  background: #6366f1;
+  background: var(--ui-primary);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
 }
@@ -519,8 +519,8 @@ function copyCode() {
 .demo-badge {
   font-size: 0.75rem;
   font-weight: 700;
-  font-family: ui-monospace, monospace;
-  color: var(--ui-color-primary-500, #38bdf8);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ui-color-primary-500);
 }
 
 .preview-container {
@@ -540,8 +540,8 @@ function copyCode() {
   display: inline-flex;
   gap: 0.3rem;
   padding: 0.25rem;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.1));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
   border-radius: 0.65rem;
 }
 
@@ -549,7 +549,7 @@ function copyCode() {
   padding: 0.35rem 0.75rem;
   border: none;
   background: transparent;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 0.45rem;
@@ -558,9 +558,8 @@ function copyCode() {
 }
 
 .pill-btn.active {
-  background: rgba(129, 140, 248, 0.2);
-  color: #818cf8;
-  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: var(--ui-primary);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -573,48 +572,106 @@ function copyCode() {
 .select-label {
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
 }
 
 .scheme-select {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.2));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 0.45rem;
-  color: var(--ui-text-highlighted, currentColor);
-  font-family: ui-monospace, monospace;
+  color: var(--ui-text-highlighted);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.825rem;
   padding: 0.3rem 0.6rem;
   outline: none;
   cursor: pointer;
 }
 
-.cube-viewport {
+.canvas-viewport {
   position: relative;
-  height: 320px;
-  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.9) 100%);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  width: 100%;
+  height: 380px;
   border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--ui-border);
   overflow: hidden;
-  user-select: none;
-  cursor: grab;
+  background: var(--ui-bg-code);
 }
 
-.cube-viewport:active {
-  cursor: grabbing;
+.three-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .viewport-hint {
   position: absolute;
-  top: 12px;
-  left: 14px;
-  font-size: 0.75rem;
-  color: var(--ui-text-muted, currentColor);
-  opacity: 0.7;
-  font-family: ui-monospace, monospace;
+  bottom: 0.75rem;
+  right: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  border-radius: 9999px;
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--ui-text-muted);
   pointer-events: none;
+}
+
+.hint-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.face-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.legend-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  border-radius: 0.65rem;
+}
+
+.legend-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--ui-border);
+  flex-shrink: 0;
+}
+
+.legend-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.legend-face-num {
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: var(--ui-primary);
+  letter-spacing: 0.05em;
+}
+
+.legend-hex {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--ui-text-highlighted);
+}
+
+.legend-rgb {
+  font-size: 0.725rem;
+  color: var(--ui-text-muted);
+  opacity: 0.85;
 }
 
 .continuous-legend {

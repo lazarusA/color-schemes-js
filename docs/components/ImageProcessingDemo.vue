@@ -429,10 +429,9 @@ function copyCode() {
 .canvas-viewport {
   width: 100%;
   border-radius: 1rem;
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--ui-border);
   overflow: hidden;
-  background: #0f172a;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  background: var(--ui-bg-code);
 }
 
 .demo-canvas {
@@ -455,8 +454,8 @@ function copyCode() {
   flex-direction: column;
   gap: 0.35rem;
   padding: 0.6rem 0.85rem;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
   border-radius: 0.65rem;
 }
 
@@ -467,12 +466,12 @@ function copyCode() {
 .slider-label {
   font-size: 0.775rem;
   font-weight: 600;
-  font-family: ui-monospace, monospace;
-  color: var(--ui-text-highlighted, currentColor);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ui-text-highlighted);
 }
 
 .param-slider {
-  accent-color: #6366f1;
+  accent-color: var(--ui-primary);
   cursor: pointer;
 }
 
@@ -485,14 +484,14 @@ function copyCode() {
   align-items: center;
   justify-content: space-between;
   font-size: 0.825rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-bottom: 0.75rem;
 }
 
 .copy-code-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
-  color: var(--ui-text-highlighted, currentColor);
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  color: var(--ui-text-highlighted);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
@@ -502,20 +501,20 @@ function copyCode() {
 }
 
 .copy-code-btn:hover {
-  border-color: #818cf8;
-  color: #818cf8;
+  border-color: var(--ui-primary);
+  color: var(--ui-primary);
 }
 
 .code-block {
   margin: 0;
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-code);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   line-height: 1.55;
-  color: #38bdf8;
+  color: var(--ui-text-code);
   overflow-x: auto;
 }
 </style>

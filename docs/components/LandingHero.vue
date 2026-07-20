@@ -453,14 +453,14 @@ function copyCommand() {
 }
 
 .live-code-block {
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--ui-bg-code);
   padding: 0.85rem 1.1rem;
   border-radius: 0.65rem;
   margin-bottom: 1.1rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.815rem;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--ui-border);
 }
 
 .live-code-line {

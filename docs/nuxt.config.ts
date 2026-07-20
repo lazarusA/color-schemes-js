@@ -1,6 +1,8 @@
 export default defineNuxtConfig({
   extends: ['docus'],
 
+  css: ['~/assets/css/main.css'],
+
   compatibilityDate: '2026-07-20',
 
   // Site metadata

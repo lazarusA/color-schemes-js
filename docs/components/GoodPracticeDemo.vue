@@ -265,8 +265,8 @@ function copyCode() {
 .good-practice-card {
   max-width: 820px;
   margin: 2rem auto;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 1.25rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
@@ -278,8 +278,8 @@ function copyCode() {
   align-items: center;
   justify-content: space-between;
   padding: 0.85rem 1.25rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-accented);
+  border-bottom: 1px solid var(--ui-border);
 }
 
 .tab-buttons {
@@ -295,7 +295,7 @@ function copyCode() {
   border-radius: 0.5rem;
   border: 1px solid transparent;
   background: transparent;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -303,11 +303,11 @@ function copyCode() {
 }
 
 .tab-toggle-btn:hover {
-  color: var(--ui-text-highlighted, currentColor);
+  color: var(--ui-text-highlighted);
 }
 
 .tab-toggle-btn.active {
-  background: #6366f1;
+  background: var(--ui-primary);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
 }
@@ -320,8 +320,8 @@ function copyCode() {
 .demo-badge {
   font-size: 0.75rem;
   font-weight: 700;
-  font-family: ui-monospace, monospace;
-  color: var(--ui-color-primary-500, #38bdf8);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ui-color-primary-500);
 }
 
 .preview-container {
@@ -341,8 +341,8 @@ function copyCode() {
   display: inline-flex;
   gap: 0.3rem;
   padding: 0.25rem;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.1));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
   border-radius: 0.65rem;
 }
 
@@ -350,7 +350,7 @@ function copyCode() {
   padding: 0.35rem 0.75rem;
   border: none;
   background: transparent;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 0.45rem;
@@ -359,9 +359,8 @@ function copyCode() {
 }
 
 .pill-btn.active {
-  background: rgba(129, 140, 248, 0.2);
-  color: #818cf8;
-  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: var(--ui-primary);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -374,83 +373,102 @@ function copyCode() {
 .select-label {
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
 }
 
 .scheme-select {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.2));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 0.45rem;
-  color: var(--ui-text-highlighted, currentColor);
-  font-family: ui-monospace, monospace;
+  color: var(--ui-text-highlighted);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.825rem;
   padding: 0.3rem 0.6rem;
   outline: none;
   cursor: pointer;
 }
 
-.scheme-preview-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
-  border-radius: 1rem;
+.metrics-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.scheme-info-row {
+.metric-card {
+  padding: 1rem;
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  border-radius: 0.85rem;
+}
+
+.metric-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.scheme-name {
-  font-size: 1.15rem;
+.metric-title {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--ui-text-muted);
+}
+
+.badge-pill {
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--ui-text-highlighted, currentColor);
-  margin: 0;
-}
-
-.tags-row {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-
-.tag {
-  font-size: 0.725rem;
-  font-weight: 700;
-  padding: 0.15rem 0.55rem;
+  padding: 0.15rem 0.45rem;
   border-radius: 0.375rem;
+  text-transform: uppercase;
 }
 
-.tag-success {
-  background: rgba(52, 211, 153, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.3);
+.badge-pill.pass {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
 }
 
-.tag-warning {
-  background: rgba(248, 113, 113, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(248, 113, 113, 0.3);
+.badge-pill.warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
 }
 
-.tag-info {
-  background: rgba(129, 140, 248, 0.15);
-  color: #818cf8;
-  border: 1px solid rgba(129, 140, 248, 0.3);
+.badge-pill.info {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
 }
 
-.colorbar-bar-container {
-  height: 2rem;
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ui-text-highlighted);
+}
+
+.metric-desc {
+  font-size: 0.775rem;
+  color: var(--ui-text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.colorbar-preview-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.colorbar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--ui-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.colorbar-frame {
+  height: 28px;
   border-radius: 0.5rem;
   padding: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
 }
 
 .colorbar-bar {
@@ -460,8 +478,8 @@ function copyCode() {
 }
 
 .lightness-chart-container {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-code);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
   padding: 1rem;
 }
@@ -470,7 +488,7 @@ function copyCode() {
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-bottom: 0.5rem;
 }
 
@@ -488,7 +506,7 @@ function copyCode() {
   display: flex;
   justify-content: space-between;
   font-size: 0.725rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-top: 0.4rem;
   opacity: 0.8;
 }
@@ -502,14 +520,14 @@ function copyCode() {
   align-items: center;
   justify-content: space-between;
   font-size: 0.825rem;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin-bottom: 0.75rem;
 }
 
 .copy-code-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
-  color: var(--ui-text-highlighted, currentColor);
+  background: var(--ui-bg-accented);
+  border: 1px solid var(--ui-border);
+  color: var(--ui-text-highlighted);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
@@ -519,20 +537,20 @@ function copyCode() {
 }
 
 .copy-code-btn:hover {
-  border-color: #818cf8;
-  color: #818cf8;
+  border-color: var(--ui-primary);
+  color: var(--ui-primary);
 }
 
 .code-block {
   margin: 0;
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.08));
+  background: var(--ui-bg-code);
+  border: 1px solid var(--ui-border);
   border-radius: 0.75rem;
-  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   line-height: 1.55;
-  color: #38bdf8;
+  color: var(--ui-text-code);
   overflow-x: auto;
 }
 </style>

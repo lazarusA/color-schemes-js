@@ -174,12 +174,12 @@ onUnmounted(() => {
 
 .edge-left {
   left: 0;
-  background: linear-gradient(to right, var(--ui-bg, #090d16) 0%, rgba(9, 13, 22, 0) 100%);
+  background: linear-gradient(to right, var(--ui-bg) 0%, transparent 100%);
 }
 
 .edge-right {
   right: 0;
-  background: linear-gradient(to left, var(--ui-bg, #090d16) 0%, rgba(9, 13, 22, 0) 100%);
+  background: linear-gradient(to left, var(--ui-bg) 0%, transparent 100%);
 }
 
 .marquee-scroll-container {
@@ -214,8 +214,8 @@ onUnmounted(() => {
   height: 140px;
   flex-shrink: 0;
   padding: 1.35rem;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
-  border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border);
   border-radius: 1.15rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 25px -6px rgba(0, 0, 0, 0.25);
@@ -228,7 +228,7 @@ onUnmounted(() => {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  border-color: #818cf8;
+  border-color: var(--ui-primary);
   box-shadow: 0 20px 35px -8px rgba(99, 102, 241, 0.25);
 }
 
@@ -242,7 +242,7 @@ onUnmounted(() => {
 .card-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--ui-text-highlighted, currentColor);
+  color: var(--ui-text-highlighted);
   margin: 0;
   line-height: 1.3;
 }
@@ -256,15 +256,15 @@ onUnmounted(() => {
   border-radius: 0.5rem;
   background: rgba(99, 102, 241, 0.12);
   border: 1px solid rgba(99, 102, 241, 0.2);
-  color: #818cf8;
+  color: var(--ui-primary);
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
 .feature-card:hover .icon-wrapper {
-  background: #6366f1;
+  background: var(--ui-primary);
   color: #ffffff;
-  border-color: #6366f1;
+  border-color: var(--ui-primary);
   transform: scale(1.08);
 }
 
@@ -276,7 +276,7 @@ onUnmounted(() => {
 .card-desc {
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--ui-text-muted, currentColor);
+  color: var(--ui-text-muted);
   margin: 0;
 }
 </style>
