@@ -16,7 +16,7 @@
           title="Visit Julia's ColorSchemes.jl repository"
         >
           <span class="badge-icon">⚡</span>
-          <span class="badge-text">JS/TS Port of Julia's <strong class="badge-highlight">ColorSchemes.jl</strong> ↗</span>
+          <span class="badge-text">JS/TS Port of Julia's <strong class="badge-highlight"> ColorSchemes.jl</strong> ↗</span>
         </a>
 
         <!-- Main Headline -->
@@ -45,7 +45,7 @@
           <!-- Command Pill -->
           <div class="install-pill" @click="copyCommand" title="Click to copy command">
             <span class="prompt">$</span>
-            <code>npm i color-schemes-js</code>
+            <code class="install-code">npm i color-schemes-js</code>
             <button class="copy-btn" aria-label="Copy Command">
               <svg v-if="!copied" class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -235,7 +235,7 @@ function copyCommand() {
 }
 
 .badge-highlight {
-  color: #a7f3d0;
+  color: var(--ui-text-highlighted, #f8fafc);
   font-weight: 700;
 }
 
@@ -363,6 +363,14 @@ function copyCommand() {
 
 .install-pill code {
   overflow-wrap: anywhere;
+}
+
+.install-code {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
 .install-pill:hover {
@@ -524,7 +532,13 @@ function copyCommand() {
 .kw { color: #f472b6; font-weight: 600; }
 .fn { color: #38bdf8; }
 .obj { color: #818cf8; }
-.str { color: #4ade80; }
+.str {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
 .val { color: #fbbf24; font-weight: 700; }
 
 .live-sample-row {
@@ -560,7 +574,8 @@ function copyCommand() {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.2);
   outline: none;
   cursor: pointer;
 }
@@ -570,9 +585,9 @@ function copyCommand() {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #6366f1;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: #f8fafc;
+  border: 2px solid rgba(15, 23, 42, 0.75);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.15s ease;
 }
