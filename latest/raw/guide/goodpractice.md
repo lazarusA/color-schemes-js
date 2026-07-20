@@ -1,0 +1,80 @@
+# Good Practice
+
+With hundreds of colorschemes available, selecting the right palette is critical—especially when communicating data accurately in scientific, medical, or analytical applications.
+
+## Perceptual Uniformity
+
+A **perceptually uniform** colorscheme is arranged so that equal steps in data values correspond to equal perceived differences in color.
+
+Research in visual perception demonstrates that human vision perceives changes in lightness (luminance) as data differences far more accurately than changes in hue. Consequently, sequential colorschemes with monotonically increasing lightness curves provide the most accurate spatial and quantitative data interpretation.
+
+### The CIELAB / Lab Color Space
+
+The **Lab color space** represents color using three axes:
+
+- **L***: Lightness (0 = black, 100 = white)
+- **a***: Green to Red axis
+- **b***: Blue to Yellow axis
+
+Plotting lightness $L^*$ across the range $<span>
+
+0.0, 1.0
+
+</span>
+
+$ of a scheme indicates how uniformly steps in data will be perceived.
+
+<good-practice-demo>
+
+
+
+</good-practice-demo>
+
+---
+
+## Recommended Palettes
+
+### Sequential Schemes
+
+Recommended perceptually uniform sequential colormaps with monotonic lightness:
+
+<scheme-list-showcase schemes="viridis, inferno, plasma, magma, cividis, tokyo, devon, hawaii, buda">
+
+
+
+</scheme-list-showcase>
+
+### Diverging Schemes
+
+For data centered around a meaningful midpoint (such as zero anomaly or 50% baseline), diverging schemes should exhibit symmetric lightness curves from the center outward to equivalent extremes:
+
+<scheme-list-showcase schemes="RdBu_11, BrBG_11, PiYG_11, PRGn_11, PuOr_11">
+
+
+
+</scheme-list-showcase>
+
+---
+
+## Less Suitable for Quantitative Data
+
+Colormaps with non-monotonic or abrupt changes in lightness (such as classic rainbow maps like `jet` or decorative palettes like `gnuplot` or `Hiroshige`) introduce perceptual artifacts—false gradients, hidden details, or artificially highlighted features—making them unsuitable for quantitative visual analysis:
+
+<scheme-list-showcase schemes="jet, rainbow, hsv, flag_us, prism">
+
+
+
+</scheme-list-showcase>
+
+---
+
+## Academic References
+
+1. **Peter Kovesi**: *Good Colour Maps: How to Design Them*. arXiv:1509.03700 <span>
+
+cs.GR
+
+</span>
+
+. [DOI:10.48550/arXiv.1509.03700](https://doi.org/10.48550/arXiv.1509.03700)
+2. **Liang Zhou & Charles D. Hansen**: *A Survey of Colormaps in Visualization*. IEEE TVCG. [PubMed 26513793](https://pubmed.ncbi.nlm.nih.gov/26513793/)

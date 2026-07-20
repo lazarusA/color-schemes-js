@@ -1,0 +1,23 @@
+# Plotting & 3D Visualization
+
+`color-schemes-js` seamlessly integrates with modern JavaScript visualization libraries, HTML5 Canvas 2D engines, and WebGL / Three.js 3D rendering pipelines.
+
+## Three.js & WebGL 3D Integration
+
+When building 3D graphics in Three.js (surfaces, particle systems, volume rendering, shader material uniforms), `color-schemes-js` maps colors directly onto mesh materials and 1D DataTexture lookup tables (LUT).
+
+<three-cube-demo>
+
+
+
+</three-cube-demo>
+
+## HTML5 Canvas 2D Visualization
+
+For HTML5 Canvas 2D rendering, heatmaps, contour plots, and statistical charts, sample any colormap continuously or resample discrete color arrays directly onto canvas contexts:
+
+<canvas-demo>
+
+
+
+</canvas-demo>

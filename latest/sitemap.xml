@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/guide/basics</loc>
+  </url>
+  <url>
+    <loc>/guide/catalogue</loc>
+  </url>
+  <url>
+    <loc>/guide/finding</loc>
+  </url>
+  <url>
+    <loc>/guide/goodpractice</loc>
+  </url>
+  <url>
+    <loc>/examples/plotting</loc>
+  </url>
+  <url>
+    <loc>/examples/images</loc>
+  </url>
+  <url>
+    <loc>/reference/references</loc>
+  </url>
+  <url>
+    <loc>/reference/functionindex</loc>
+  </url>
+  <url>
+    <loc>/</loc>
+  </url>
+</urlset>
