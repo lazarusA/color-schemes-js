@@ -81,6 +81,17 @@ const inverted = myScheme.getInverse();
 const palette10 = myScheme.resample(10);
 ```
 
+## Acknowledgements
+
+This project is a JavaScript/TypeScript port of the original Julia library [ColorSchemes.jl](https://github.com/JuliaGraphics/ColorSchemes.jl). We are deeply grateful to all the authors and contributors who created, curated, and maintained these color schemes over the years.
+
+Special thanks to the contributors of `ColorSchemes.jl`:
+
+[@cormullion](https://github.com/cormullion), [@rafaqz](https://github.com/rafaqz), [@asinghvi17](https://github.com/asinghvi17), [@ViralBShah](https://github.com/ViralBShah), [@gustaphe](https://github.com/gustaphe), [@max-de-rooij](https://github.com/max-de-rooij), [@ValentinKaisermayer](https://github.com/ValentinKaisermayer), [@andrew-saydjari](https://github.com/andrew-saydjari), [@t-bltg](https://github.com/t-bltg), [@daviehh](https://github.com/daviehh), [@stelmo](https://github.com/stelmo), [@lwabeke](https://github.com/lwabeke), [@jarredclloyd](https://github.com/jarredclloyd), [@davibarreira](https://github.com/davibarreira), [@agchesebro](https://github.com/agchesebro), [@tkelman](https://github.com/tkelman), [@tlienart](https://github.com/tlienart), [@tecosaur](https://github.com/tecosaur), [@kellertuer](https://github.com/kellertuer), [@NHDaly](https://github.com/NHDaly), [@maucejo](https://github.com/maucejo), [@adrhill](https://github.com/adrhill), [@guo-yong-zhi](https://github.com/guo-yong-zhi), [@waldyrious](https://github.com/waldyrious), [@timholy](https://github.com/timholy), [@StefanKarpinski](https://github.com/StefanKarpinski), [@sebastiantk](https://github.com/sebastiantk), [@nealmckee](https://github.com/nealmckee), [@musoke](https://github.com/musoke), [@mortenpi](https://github.com/mortenpi), [@Moelf](https://github.com/Moelf), [@mileslucas](https://github.com/mileslucas), [@evetion](https://github.com/evetion), [@hellemo](https://github.com/hellemo), [@kdyrhage](https://github.com/kdyrhage), [@ranocha](https://github.com/ranocha), [@staticfloat](https://github.com/staticfloat), and [@daschw](https://github.com/daschw).
+
+For a complete and up-to-date list, visit the [ColorSchemes.jl Contributors Graph](https://github.com/JuliaGraphics/ColorSchemes.jl/graphs/contributors).
+
 ## License
 
 [MIT](./LICENSE.md) — Inspired by [ColorSchemes.jl](https://github.com/JuliaGraphics/ColorSchemes.jl).
+
