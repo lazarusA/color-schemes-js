@@ -1,7 +1,11 @@
 # color-schemes-js
 
 [![npm version](https://img.shields.io/npm/v/color-schemes-js.svg)](https://www.npmjs.com/package/color-schemes-js)
+[![][docs-latest-img]][docs-latest-url]
 [![license](https://img.shields.io/npm/l/color-schemes-js.svg)](./LICENSE.md)
+
+[docs-latest-img]: https://img.shields.io/badge/documentation-%20latest-violet?style=round-square
+[docs-latest-url]: https://lazarusa.github.io/color-schemes-js/latest/
 
 Pre-defined color schemes and continuous color evaluation tools for TypeScript and JavaScript, inspired by Julia's [ColorSchemes.jl](https://github.com/JuliaGraphics/ColorSchemes.jl).
 
