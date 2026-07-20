@@ -82,7 +82,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
-import { colorschemes, get, resample, findColorScheme } from 'color-schemes'
+import { colorschemes, get, resample, findColorScheme } from 'color-schemes-js'
 
 const activeTab = ref('preview')
 const demoType = ref('heatmap') // 'heatmap' | 'barchart'
@@ -203,7 +203,7 @@ onMounted(() => {
 
 const codeSnippetText = computed(() => {
   if (demoType.value === 'heatmap') {
-    return `import { colorschemes, get } from 'color-schemes';
+    return `import { colorschemes, get } from 'color-schemes-js';
 
 const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d')!;
@@ -231,7 +231,7 @@ for (let y = 0; y < canvas.height; y++) {
 ctx.putImageData(imgData, 0, 0);`
   }
 
-  return `import { colorschemes, resample } from 'color-schemes';
+  return `import { colorschemes, resample } from 'color-schemes-js';
 
 const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d')!;

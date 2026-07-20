@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "better-sqlite3": "^12.11.1",
-    "color-schemes": "file:..",
     "color-schemes-js": "file:..",
     "docus": "latest",
     "nuxt": "^4.4.8",

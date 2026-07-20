@@ -24,21 +24,21 @@
 
       <!-- Action CTAs -->
       <div class="cta-group">
-        <NuxtLink to="/basics" class="btn btn-primary">
+        <NuxtLink to="/guide/basics" class="btn btn-primary">
           <span>Get Started</span>
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </NuxtLink>
 
-        <NuxtLink to="/catalogue" class="btn btn-secondary">
+        <NuxtLink to="/guide/catalogue" class="btn btn-secondary">
           Explore Catalogue
         </NuxtLink>
 
         <!-- Command Pill -->
         <div class="install-pill" @click="copyCommand">
           <span class="prompt">$</span>
-          <code>npm install color-schemes</code>
+          <code>npm install color-schemes-js</code>
           <button class="copy-btn" aria-label="Copy Command">
             <svg v-if="!copied" class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -54,7 +54,7 @@
       <!-- Simple Live Package Example -->
       <div class="hero-live-example">
         <div class="live-code-line">
-          <span class="kw">import</span> { <span class="fn">get</span>, <span class="obj">colorschemes</span> } <span class="kw">from</span> <span class="str">'color-schemes'</span>;
+          <span class="kw">import</span> { <span class="fn">get</span>, <span class="obj">colorschemes</span> } <span class="kw">from</span> <span class="str">'color-schemes-js'</span>;
           <br />
           <span class="fn">get</span>(<span class="obj">colorschemes.viridis</span>, <span class="val">{{ sampleT.toFixed(2) }}</span>)
         </div>
@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { colorschemes, get } from 'color-schemes'
+import { colorschemes, get } from 'color-schemes-js'
 
 const copied = ref(false)
 const sampleT = ref(0.5)
@@ -106,7 +106,7 @@ const sampledHex = computed(() => {
 })
 
 function copyCommand() {
-  navigator.clipboard.writeText('npm install color-schemes')
+  navigator.clipboard.writeText('npm install color-schemes-js')
   copied.value = true
   setTimeout(() => {
     copied.value = false

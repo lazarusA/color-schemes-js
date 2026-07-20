@@ -98,7 +98,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
-import { colorschemes, get, findColorScheme } from 'color-schemes'
+import { colorschemes, get, findColorScheme } from 'color-schemes-js'
 
 const activeTab = ref('preview')
 const demoMode = ref('fractal') // 'fractal' | 'elevation'
@@ -226,7 +226,7 @@ onMounted(() => {
 
 const codeSnippetText = computed(() => {
   if (demoMode.value === 'fractal') {
-    return `import { colorschemes, get } from 'color-schemes';
+    return `import { colorschemes, get } from 'color-schemes-js';
 
 function drawJuliaFractal(ctx: CanvasRenderingContext2D, width: number, height: number) {
   const imgData = ctx.createImageData(width, height);
@@ -266,7 +266,7 @@ function drawJuliaFractal(ctx: CanvasRenderingContext2D, width: number, height: 
 }`
   }
 
-  return `import { colorschemes, get } from 'color-schemes';
+  return `import { colorschemes, get } from 'color-schemes-js';
 
 // False-color map elevation matrix with colormap
 function generateFalseColorElevation(ctx: CanvasRenderingContext2D, width: number, height: number) {

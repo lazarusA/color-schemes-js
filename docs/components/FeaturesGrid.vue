@@ -50,37 +50,37 @@ const features = [
   {
     title: '1,150+ Curated Palettes',
     description: 'Explore scientific, cartographic, statistical, and masterwork artistic colormaps.',
-    link: '/catalogue',
+    link: '/guide/catalogue',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />'
   },
   {
     title: 'Perceptually Uniform',
     description: 'Monotonic Lab lightness gradients prevent data distortion and false visual artifacts.',
-    link: '/goodpractice',
+    link: '/guide/goodpractice',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />'
   },
   {
     title: 'Continuous Interpolation',
     description: 'Sample any scheme continuously or resample into discrete n-step color arrays with alpha.',
-    link: '/basics',
+    link: '/guide/basics',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />'
   },
   {
     title: 'WebGL & 3D Shaders',
     description: 'Directly generate 1D DataTextures and lookup tables for Three.js and WebGL shaders.',
-    link: '/plotting',
+    link: '/examples/plotting',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />'
   },
   {
     title: 'Colorblind Accessible',
     description: 'CVD-tested safe palettes (Paul Tol, Okabe & Ito) optimized for visual accessibility.',
-    link: '/finding',
+    link: '/guide/finding',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />'
   },
   {
     title: 'TypeScript Native',
     description: 'Strict TS declarations, zero runtime dependencies, light footprint, and tree-shaking.',
-    link: '/functionindex',
+    link: '/reference/functionindex',
     iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />'
   }
 ]

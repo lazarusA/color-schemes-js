@@ -126,7 +126,7 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import * as THREE from 'three'
-import { colorschemes, get, resample, findColorScheme } from 'color-schemes'
+import { colorschemes, get, resample, findColorScheme } from 'color-schemes-js'
 
 const activeTab = ref('preview')
 const colorMode = ref('continuous') // 'continuous' | 'categorical'
@@ -406,7 +406,7 @@ onUnmounted(() => {
 const codeSnippetText = computed(() => {
   if (colorMode.value === 'categorical') {
     return `import * as THREE from 'three';
-import { colorschemes, resample } from 'color-schemes';
+import { colorschemes, resample } from 'color-schemes-js';
 
 // 1. Resample scheme into 6 discrete categorical face colors
 const scheme = colorschemes.${selectedSchemeName.value};
@@ -428,7 +428,7 @@ scene.add(cube);`
   }
 
   return `import * as THREE from 'three';
-import { colorschemes, get } from 'color-schemes';
+import { colorschemes, get } from 'color-schemes-js';
 
 // 1. Create a 1D CanvasTexture from the continuous colormap
 const scheme = colorschemes.${selectedSchemeName.value};

@@ -210,7 +210,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { colorschemes, get, resample } from 'color-schemes'
+import { colorschemes, get, resample } from 'color-schemes-js'
 
 const copiedText = ref(false)
 const tValue = ref(0.5)

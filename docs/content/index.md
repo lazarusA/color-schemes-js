@@ -10,5 +10,5 @@ seo:
 ::features-grid
 ::
 
-::interactive-swatch-preview
-::
+<!-- ::interactive-swatch-preview
+:: -->

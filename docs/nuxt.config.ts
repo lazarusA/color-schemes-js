@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         'three',
-        'color-schemes',
+        'color-schemes-js',
       ],
     },
   },

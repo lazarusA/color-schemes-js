@@ -40,7 +40,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { colorschemes, get, findColorScheme } from 'color-schemes'
+import { colorschemes, get, findColorScheme } from 'color-schemes-js'
 
 const props = defineProps({
   schemes: {

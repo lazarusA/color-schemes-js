@@ -119,7 +119,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { colorschemes, get, findColorScheme } from 'color-schemes'
+import { colorschemes, get, findColorScheme } from 'color-schemes-js'
 
 const activeTab = ref('preview')
 const activeCategory = ref('sequential')
@@ -233,7 +233,7 @@ const isMonotonic = computed(() => {
 })
 
 const codeSnippetText = computed(() => {
-  return `import { colorschemes, get } from 'color-schemes';
+  return `import { colorschemes, get } from 'color-schemes-js';
 
 // Evaluate CIELAB Lightness L* across a colormap for perceptual uniformity
 const scheme = colorschemes.${selectedSchemeName.value};
