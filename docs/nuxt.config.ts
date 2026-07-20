@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // Site metadata
   site: {
-    name: 'ColorSchemes.js'
+    name: 'color-schemes-js'
   },
 
   // Disable Docus server-only modules (not compatible with static export)
