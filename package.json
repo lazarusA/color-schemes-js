@@ -2,6 +2,7 @@
   "name": "color-schemes-js",
   "version": "0.1.0",
   "description": "Pre-defined color schemes and color evaluation tools, inspired by Julia's ColorSchemes.jl, in TypeScript.",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -13,13 +14,16 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE.md"
   ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run test && npm run typecheck && npm run build"
   },
   "keywords": [
     "colorscheme",
@@ -30,11 +34,24 @@
     "visualization",
     "typescript"
   ],
-  "author": "",
+  "author": {
+    "name": "Lazaro Alonso",
+    "email": "lazarus.alon@gmail.com",
+    "url": "https://lazarusa.github.io"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazarusA/color-schemes-js.git"
+  },
+  "homepage": "https://github.com/lazarusA/color-schemes-js#readme",
+  "bugs": {
+    "url": "https://github.com/lazarusA/color-schemes-js/issues"
+  },
   "devDependencies": {
-    "tsup": "^8.0.0",
-    "typescript": "^5.3.0",
-    "vitest": "^1.2.0"
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   }
 }
+
