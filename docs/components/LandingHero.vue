@@ -435,6 +435,39 @@ function copyCommand() {
   text-align: left;
 }
 
+@media (max-width: 767px) {
+  .hero-live-example {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .live-card-header {
+    display: none;
+  }
+
+  .live-code-block {
+    padding: 0.75rem 0;
+    margin-bottom: 0.85rem;
+    background: transparent;
+    border: none;
+  }
+
+  .live-code-line {
+    white-space: pre-wrap;
+    overflow-x: visible;
+    overflow-wrap: anywhere;
+    margin-left: 0.5rem;
+    text-indent: -0.5rem;
+  }
+
+  .live-sample-row {
+    padding: 0;
+  }
+}
+
 .live-card-header {
   display: flex;
   align-items: center;
@@ -481,9 +514,11 @@ function copyCommand() {
 
 .live-code-line {
   color: var(--ui-text-highlighted, currentColor);
-  white-space: nowrap;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   min-width: 0;
+  margin-left: 0.35rem;
+  text-indent: -0.35rem;
 }
 
 .kw { color: #f472b6; font-weight: 600; }
