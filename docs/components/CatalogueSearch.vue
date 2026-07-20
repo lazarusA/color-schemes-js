@@ -40,17 +40,17 @@
     <div v-if="searchQuery.trim()" class="search-results-section">
       <div class="results-header font-mono">
         <span v-if="searchResults.length > 0">
-          Showing top <strong>{{ topMatches.length }}</strong> of {{ searchResults.length }} matches for "{{ searchQuery }}"
+          Showing <strong>{{ visibleMatches.length }}</strong> of <strong>{{ searchResults.length }}</strong> matches for "{{ searchQuery }}"
         </span>
         <span v-else class="no-results">
           No colormaps found for "{{ searchQuery }}". Try searching "ocean", "blue", "viridis", or "cvd".
         </span>
       </div>
 
-      <!-- Top 5 Matches Grid -->
-      <div v-if="topMatches.length > 0" class="results-grid">
+      <!-- Results Grid -->
+      <div v-if="visibleMatches.length > 0" class="results-grid">
         <div 
-          v-for="item in topMatches" 
+          v-for="item in visibleMatches" 
           :key="item.name"
           class="result-card"
           @click="copyName(item.name)"
@@ -67,6 +67,14 @@
           </div>
         </div>
       </div>
+
+      <!-- Show All / Show Less toggle -->
+      <div v-if="searchResults.length > PREVIEW_COUNT" class="show-more-row">
+        <button class="show-more-btn" @click="showAll = !showAll">
+          <span v-if="hasMoreResults">Show all {{ searchResults.length }} results ↓</span>
+          <span v-else>Show less ↑</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -77,6 +85,9 @@ import { colorschemes, get, findColorScheme } from 'color-schemes'
 
 const searchQuery = ref('')
 const copiedName = ref('')
+const showAll = ref(false)
+
+const PREVIEW_COUNT = 12
 
 const popularChips = ['viridis', 'inferno', 'ocean', 'cmocean', 'cvd', 'tableau', 'dracula']
 
@@ -86,21 +97,31 @@ const searchResults = computed(() => {
   if (typeof findColorScheme === 'function') {
     return findColorScheme(q)
   }
-  
+
   // Manual fallback search
   const qLower = q.toLowerCase()
   const results = []
   for (const [name, scheme] of Object.entries(colorschemes || {})) {
-    if (name.toLowerCase().includes(qLower) || (scheme.category && scheme.category.toLowerCase().includes(qLower))) {
+    if (
+      name.toLowerCase().includes(qLower) ||
+      (scheme.category && scheme.category.toLowerCase().includes(qLower)) ||
+      (scheme.notes && scheme.notes.toLowerCase().includes(qLower))
+    ) {
       results.push({ name, scheme })
     }
   }
   return results
 })
 
-const topMatches = computed(() => {
-  return searchResults.value.slice(0, 5)
+const visibleMatches = computed(() => {
+  if (showAll.value) return searchResults.value
+  return searchResults.value.slice(0, PREVIEW_COUNT)
 })
+
+const hasMoreResults = computed(() => searchResults.value.length > PREVIEW_COUNT && !showAll.value)
+
+// Reset showAll whenever the query changes
+watch(() => searchQuery.value, () => { showAll.value = false })
 
 function getGradientCss(scheme) {
   if (!scheme) return 'linear-gradient(to right, #440154, #fde725)'
@@ -358,5 +379,32 @@ function copyName(name) {
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
+}
+
+.show-more-row {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.show-more-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.1);
+  color: #818cf8;
+  font-size: 0.825rem;
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.show-more-btn:hover {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: #818cf8;
+  color: #c7d2fe;
+  transform: translateY(-1px);
 }
 </style>
