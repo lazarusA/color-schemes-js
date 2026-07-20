@@ -4,72 +4,95 @@
     <div class="glow-orb glow-1"></div>
     <div class="glow-orb glow-2"></div>
 
-    <div class="hero-content">
-      <!-- Badge -->
-      <div class="badge">
-        <span class="badge-icon">✨</span>
-        <span class="badge-text">1,150+ Curated Palettes • Zero Dependencies</span>
-      </div>
+    <div class="hero-grid">
+      <!-- Left Column: Hero Content & CTAs -->
+      <div class="hero-left">
+        <!-- Badge linking to Julia's ColorSchemes.jl -->
+        <a 
+          href="https://github.com/JuliaGraphics/ColorSchemes.jl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="badge"
+          title="Visit Julia's ColorSchemes.jl repository"
+        >
+          <span class="badge-icon">⚡</span>
+          <span class="badge-text">JS/TS Port of Julia's <strong class="badge-highlight">ColorSchemes.jl</strong> ↗</span>
+        </a>
 
-      <!-- Main Headline -->
-      <h1 class="hero-title">
-        Perceptually Uniform <br />
-        <span class="gradient-text">Color Schemes</span> for JS & TS
-      </h1>
+        <!-- Main Headline -->
+        <h1 class="hero-title">
+          <span class="nowrap">Perceptually Uniform</span> <span class="gradient-text">Color Schemes</span> <span class="nowrap">for JS & TS</span>
+        </h1>
 
-      <!-- Subtitle -->
-      <p class="hero-description">
-        Scientifically calibrated colormaps, artistic masterwork palettes, and continuous interpolation algorithms designed for data visualization, WebGL shaders, Three.js, and canvas applications.
-      </p>
+        <!-- Subtitle -->
+        <p class="hero-description">
+          1,150+ scientifically calibrated colormaps, artistic masterwork palettes, and continuous interpolation algorithms for WebGL, Three.js, and HTML5 Canvas.
+        </p>
 
-      <!-- Action CTAs -->
-      <div class="cta-group">
-        <NuxtLink to="/guide/basics" class="btn btn-primary">
-          <span>Get Started</span>
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </NuxtLink>
-
-        <NuxtLink to="/guide/catalogue" class="btn btn-secondary">
-          Explore Catalogue
-        </NuxtLink>
-
-        <!-- Command Pill -->
-        <div class="install-pill" @click="copyCommand">
-          <span class="prompt">$</span>
-          <code>npm install color-schemes-js</code>
-          <button class="copy-btn" aria-label="Copy Command">
-            <svg v-if="!copied" class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        <!-- Action CTAs -->
+        <div class="cta-group">
+          <NuxtLink to="/guide/basics" class="btn btn-primary">
+            <span>Get Started</span>
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            <svg v-else class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </button>
-          <span v-if="copied" class="toast-tooltip">Copied!</span>
+          </NuxtLink>
+
+          <NuxtLink to="/guide/catalogue" class="btn btn-secondary">
+            Explore Catalogue
+          </NuxtLink>
+
+          <!-- Command Pill -->
+          <div class="install-pill" @click="copyCommand" title="Click to copy command">
+            <span class="prompt">$</span>
+            <code>npm i color-schemes-js</code>
+            <button class="copy-btn" aria-label="Copy Command">
+              <svg v-if="!copied" class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <svg v-else class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </button>
+            <span v-if="copied" class="toast-tooltip">Copied!</span>
+          </div>
         </div>
       </div>
 
-      <!-- Simple Live Package Example -->
-      <div class="hero-live-example">
-        <div class="live-code-line">
-          <span class="kw">import</span> { <span class="fn">get</span>, <span class="obj">colorschemes</span> } <span class="kw">from</span> <span class="str">'color-schemes-js'</span>;
-          <br />
-          <span class="fn">get</span>(<span class="obj">colorschemes.viridis</span>, <span class="val">{{ sampleT.toFixed(2) }}</span>)
-        </div>
-        <div class="live-sample-row">
-          <div class="live-color-swatch" :style="{ backgroundColor: sampledColor }"></div>
-          <span class="live-hex-badge">{{ sampledHex }}</span>
-          <input 
-            type="range" 
-            min="0" 
-            max="1" 
-            step="0.01" 
-            v-model.number="sampleT" 
-            class="live-slider"
-            aria-label="Interpolation position"
-          />
+      <!-- Right Column: Interactive Live Demo -->
+      <div class="hero-right">
+        <div class="hero-live-example">
+          <div class="live-card-header">
+            <div class="card-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="live-card-title">Live Interpolation Sandbox</span>
+          </div>
+
+          <div class="live-code-block">
+            <div class="live-code-line">
+              <span class="kw">import</span> { <span class="fn">get</span>, <span class="obj">colorschemes</span> } <span class="kw">from</span> <span class="str">'color-schemes-js'</span>;
+            </div>
+            <div class="live-code-line">
+              <span class="kw">const</span> color = <span class="fn">get</span>(<span class="obj">colorschemes.viridis</span>, <span class="val">{{ sampleT.toFixed(2) }}</span>);
+            </div>
+          </div>
+
+          <div class="live-sample-row">
+            <div class="live-color-swatch" :style="{ backgroundColor: sampledColor }"></div>
+            <span class="live-hex-badge">{{ sampledHex }}</span>
+            <input 
+              type="range" 
+              min="0" 
+              max="1" 
+              step="0.01" 
+              v-model.number="sampleT" 
+              class="live-slider"
+              aria-label="Interpolation position"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -117,73 +140,124 @@ function copyCommand() {
 <style scoped>
 .hero-container {
   position: relative;
-  padding: 5rem 1.5rem 4rem;
+  padding: 5.5rem 1.5rem 4.5rem;
   overflow: hidden;
-  text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .hero-container {
+    padding: 6.5rem 1.5rem 5.5rem;
+  }
 }
 
 .glow-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.25;
+  opacity: 0.22;
   pointer-events: none;
 }
 
 .glow-1 {
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(circle, #6366f1, #a855f7);
-  top: -100px;
-  left: 50%;
+  top: -120px;
+  left: 30%;
   transform: translateX(-50%);
 }
 
 .glow-2 {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   background: radial-gradient(circle, #06b6d4, #3b82f6);
-  top: 150px;
-  left: 20%;
+  top: 100px;
+  right: 10%;
 }
 
-.hero-content {
+.hero-grid {
   position: relative;
-  max-width: 960px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
   z-index: 1;
+  text-align: center;
 }
 
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.95fr;
+    text-align: left;
+    gap: 3rem;
+  }
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .hero-left {
+    align-items: flex-start;
+  }
+}
+
+/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 1rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 9999px;
   background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.28);
   backdrop-filter: blur(8px);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.badge:hover {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
 }
 
 .badge-text {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ui-color-primary-500, #818cf8);
 }
 
+.badge-highlight {
+  color: #a7f3d0;
+  font-weight: 700;
+}
+
+/* Main Headline */
 .hero-title {
-  font-size: 3.25rem;
+  font-size: 2.35rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.02em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   color: var(--ui-text-highlighted, currentColor);
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 4rem;
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
   }
 }
 
@@ -191,33 +265,44 @@ function copyCommand() {
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .hero-description {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--ui-text-muted, currentColor);
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
+  max-width: 620px;
+  margin: 0 0 2rem;
 }
 
+/* CTAs */
 .cta-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3.5rem;
+  gap: 0.85rem;
+}
+
+@media (min-width: 992px) {
+  .cta-group {
+    justify-content: flex-start;
+  }
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.35rem;
   border-radius: 0.75rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -245,22 +330,22 @@ function copyCommand() {
 }
 
 .btn-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .install-pill {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 1.25rem;
+  gap: 0.65rem;
+  padding: 0.65rem 1.15rem;
   background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.8));
   border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
   border-radius: 0.75rem;
   cursor: pointer;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--ui-color-primary-500, #38bdf8);
   transition: all 0.2s ease;
 }
@@ -307,25 +392,81 @@ function copyCommand() {
   animation: fadeIn 0.2s ease;
 }
 
+/* Right Column: Live Demo Card */
+.hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+}
 
+@media (min-width: 992px) {
+  .hero-right {
+    justify-content: flex-end;
+    margin-top: 0.25rem;
+  }
+}
 
 .hero-live-example {
-  max-width: 520px;
-  margin: 0 auto 2.5rem;
-  padding: 1rem 1.25rem;
-  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.75));
+  width: 100%;
+  max-width: 530px;
+  padding: 1.25rem 1.35rem;
+  background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.85));
   border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
-  border-radius: 0.875rem;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 1.1rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+  text-align: left;
+}
+
+.live-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.live-card-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ui-text-dimmed, #94a3b8);
+}
+
+.live-code-block {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.65rem;
+  margin-bottom: 1.1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.815rem;
+  line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .live-code-line {
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
   color: var(--ui-text-highlighted, currentColor);
-  line-height: 1.5;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .kw { color: #f472b6; font-weight: 600; }
@@ -337,24 +478,27 @@ function copyCommand() {
 .live-sample-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
+  padding: 0.35rem 0.25rem 0.1rem;
 }
 
 .live-color-swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
   transition: background-color 0.1s ease;
 }
 
 .live-hex-badge {
   font-family: ui-monospace, monospace;
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   font-weight: 700;
   color: var(--ui-text-highlighted, currentColor);
   min-width: 64px;
+  flex-shrink: 0;
 }
 
 .live-slider {
@@ -362,30 +506,25 @@ function copyCommand() {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   outline: none;
   cursor: pointer;
 }
 
 .live-slider::-webkit-slider-thumb {
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #6366f1;
   border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  transition: transform 0.15s ease;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.live-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
 }
 
 @keyframes fadeIn {
@@ -393,3 +532,4 @@ function copyCommand() {
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
