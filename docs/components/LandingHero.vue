@@ -241,28 +241,25 @@ function copyCommand() {
 
 /* Main Headline */
 .hero-title {
-  font-size: 2.35rem;
+  font-size: clamp(1.9rem, 5.2vw, 3rem);
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.02em;
   margin-bottom: 1.15rem;
   color: var(--ui-text-highlighted, currentColor);
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2.35rem, 4vw, 3rem);
   }
 }
 
 .gradient-text {
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
@@ -272,11 +269,22 @@ function copyCommand() {
   white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .gradient-text,
+  .nowrap {
+    white-space: normal;
+  }
+}
+
 .hero-description {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--ui-text-muted, currentColor);
-  max-width: 620px;
+  max-width: 100%;
   margin: 0 0 2rem;
 }
 
@@ -287,6 +295,7 @@ function copyCommand() {
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -348,6 +357,12 @@ function copyCommand() {
   font-size: 0.875rem;
   color: var(--ui-color-primary-500, #38bdf8);
   transition: all 0.2s ease;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.install-pill code {
+  overflow-wrap: anywhere;
 }
 
 .install-pill:hover {
@@ -395,6 +410,7 @@ function copyCommand() {
 /* Right Column: Live Demo Card */
 .hero-right {
   width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-self: flex-start;
@@ -408,8 +424,8 @@ function copyCommand() {
 }
 
 .hero-live-example {
-  width: 100%;
-  max-width: 530px;
+  width: min(100%, 530px);
+  max-width: 100%;
   padding: 1.25rem 1.35rem;
   background: var(--ui-bg-elevated, rgba(15, 23, 42, 0.85));
   border: 1px solid var(--ui-border, rgba(255, 255, 255, 0.12));
@@ -467,6 +483,7 @@ function copyCommand() {
   color: var(--ui-text-highlighted, currentColor);
   white-space: nowrap;
   overflow-x: auto;
+  min-width: 0;
 }
 
 .kw { color: #f472b6; font-weight: 600; }
@@ -480,6 +497,7 @@ function copyCommand() {
   align-items: center;
   gap: 0.85rem;
   padding: 0.35rem 0.25rem 0.1rem;
+  flex-wrap: wrap;
 }
 
 .live-color-swatch {
@@ -503,6 +521,7 @@ function copyCommand() {
 
 .live-slider {
   flex: 1;
+  min-width: 0;
   appearance: none;
   height: 6px;
   border-radius: 3px;
