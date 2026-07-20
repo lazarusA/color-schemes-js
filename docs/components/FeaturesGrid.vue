@@ -12,13 +12,15 @@
 
       <!-- Bidirectional circular scrollable container -->
       <div 
-        ref="scrollContainer" 
+        ref="scrollContainer"
         class="marquee-scroll-container"
-        @scroll="handleScroll"
+        @mousedown="startDrag"
+        @mousemove="onDrag"
+        @mouseup="endDrag"
+        @mouseleave="handleMouseLeave"
         @mouseenter="isHovered = true"
-        @mouseleave="isHovered = false"
       >
-        <div class="marquee-track">
+        <div class="marquee-track" :class="{ 'is-paused': isHovered }">
           <NuxtLink 
             v-for="(feature, idx) in triplicatedFeatures" 
             :key="idx" 
@@ -44,6 +46,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const scrollContainer = ref(null)
 const isHovered = ref(false)
+const dragState = ref({ isDragging: false, startX: 0, startScrollLeft: 0 })
 let animFrameId = null
 
 const features = [
@@ -85,39 +88,37 @@ const features = [
   }
 ]
 
-// Triplicate list for infinite 360 circular scroll in both left and right directions
+// Triplicate list for an infinite circular loop
 const triplicatedFeatures = computed(() => [...features, ...features, ...features])
 
-// Bidirectional infinite circular wrap-around scroll listener
-function handleScroll() {
+function startDrag(event) {
   if (!scrollContainer.value) return
-  const el = scrollContainer.value
-  const singleSetWidth = el.scrollWidth / 3
 
-  // Infinite wrap-around in both directions
-  if (el.scrollLeft <= 10) {
-    el.scrollLeft += singleSetWidth
-  } else if (el.scrollLeft >= 2 * singleSetWidth - 10) {
-    el.scrollLeft -= singleSetWidth
-  }
+  dragState.value.isDragging = true
+  dragState.value.startX = event.clientX
+  dragState.value.startScrollLeft = scrollContainer.value.scrollLeft
 }
 
-// Frame-by-frame auto-scroll loop
-function autoScrollLoop() {
-  if (scrollContainer.value && !isHovered.value) {
-    scrollContainer.value.scrollLeft += 0.6
-    handleScroll()
-  }
-  animFrameId = requestAnimationFrame(autoScrollLoop)
+function onDrag(event) {
+  if (!dragState.value.isDragging || !scrollContainer.value) return
+
+  const deltaX = event.clientX - dragState.value.startX
+  scrollContainer.value.scrollLeft = dragState.value.startScrollLeft - deltaX
+}
+
+function endDrag() {
+  dragState.value.isDragging = false
+}
+
+function handleMouseLeave() {
+  isHovered.value = false
+  endDrag()
 }
 
 onMounted(() => {
   if (scrollContainer.value) {
-    // Start initial scroll position in middle set
-    const singleSetWidth = scrollContainer.value.scrollWidth / 3
-    scrollContainer.value.scrollLeft = singleSetWidth
+    scrollContainer.value.scrollLeft = 0
   }
-  animFrameId = requestAnimationFrame(autoScrollLoop)
 })
 
 onUnmounted(() => {
@@ -187,6 +188,9 @@ onUnmounted(() => {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
+  scroll-behavior: auto;
+  touch-action: pan-x;
+  user-select: none;
   padding: 1.25rem 0;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
@@ -207,6 +211,21 @@ onUnmounted(() => {
   display: flex;
   gap: 1.25rem;
   width: max-content;
+  will-change: transform;
+  animation: marquee-scroll 60s linear infinite;
+}
+
+.marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .feature-card {
